@@ -10,6 +10,7 @@ interface PostProps {
   date?: string;
   readTime?: string;
   width?: number | string;
+  onClick?: () => void;
 }
 
 const PostContainer = styled.div<PostProps>`
@@ -57,13 +58,18 @@ const Post = ({
   date = '2022-02-02',
   readTime = '3 min read',
   width = 300,
+  onClick = () => console.log('Post Clicked'),
 }: PostProps) => {
   if (typeof width === 'number') {
     width = width + 'px';
   }
 
+  const handleClick = () => {
+    onClick?.();
+  };
+
   return (
-    <PostContainer width={width}>
+    <PostContainer width={width} onClick={handleClick}>
       <Title>{title}</Title>
       <Content>{content}</Content>
       <Additional>
