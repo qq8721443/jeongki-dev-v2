@@ -23,9 +23,10 @@ const IconWrapper = styled.div`
 
 interface HeadingProps {
   children: React.ReactNode;
+  id?: string;
   level: number;
   icon?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 /**
@@ -34,13 +35,21 @@ interface HeadingProps {
  * @params icon
  * @params children
  */
-const Heading = ({ children, level, icon = false, onClick }: HeadingProps) => {
+const Heading = ({
+  children,
+  id,
+  level,
+  icon = false,
+  onClick,
+}: HeadingProps) => {
   const [isHover, setIsHover] = React.useState<boolean>(false);
 
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
   const handleClick = () => {
+    console.log('clicked!');
     onClick?.();
+    location.href = `#${id}`;
   };
 
   return (
@@ -54,7 +63,7 @@ const Heading = ({ children, level, icon = false, onClick }: HeadingProps) => {
           <AiOutlineLink />
         </IconWrapper>
       )}
-      <Tag>{children}</Tag>
+      <Tag id={id}>{children}</Tag>
     </Wrapper>
   );
 };
