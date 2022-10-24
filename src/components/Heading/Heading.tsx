@@ -7,9 +7,6 @@ const Wrapper = styled.div`
   position: relative;
   width: fit-content;
   cursor: pointer;
-  &:hover {
-    color: #bcbcbc;
-  }
 `;
 
 const IconWrapper = styled.div`
@@ -47,9 +44,7 @@ const Heading = ({
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
   const handleClick = () => {
-    console.log('clicked!');
     onClick?.();
-    location.href = `#${id}`;
   };
 
   return (
