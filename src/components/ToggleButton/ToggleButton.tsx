@@ -72,7 +72,6 @@ const ToggleButton = ({
       height={height}
       padding={padding}
       radius={`calc(${height}/2)`}
-      color={color as string & string[]}
       onClick={handleToggle}
       style={{ backgroundColor: state ? color[0] : color[1] }}
     >
