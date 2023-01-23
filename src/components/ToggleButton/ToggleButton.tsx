@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 interface ToggleContainerProps {
   width: number | string;
-  height: number | string;
+  height?: number | string;
   padding?: number | string;
   radius?: string;
   color?: string[];
