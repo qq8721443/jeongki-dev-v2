@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Carousel, Item } from '../components';
 
