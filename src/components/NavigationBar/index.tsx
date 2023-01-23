@@ -21,7 +21,12 @@ export const NavigationBar = () => {
           <MenuList>
             {MENU_LIST.map((item) => (
               <MenuListItem key={item.name}>
-                <Link to={item.link}>{item.name}</Link>
+                <Link
+                  to={item.link}
+                  activeStyle={{ color: '#333', fontWeight: 700 }}
+                >
+                  {item.name}
+                </Link>
               </MenuListItem>
             ))}
           </MenuList>
@@ -55,7 +60,7 @@ const InnerContainer = styled.div({
 
 const LogoContainer = styled.div({
   color: '#777',
-  fontSize: '18px',
+  fontSize: '22px',
   fontWeight: 500,
   letterSpacing: '1px',
 
@@ -70,8 +75,13 @@ const MenuList = styled.ul({
   alignItems: 'center',
   listStyle: 'none',
   color: '#777',
+  fontSize: '14px',
 });
 
 const MenuListItem = styled.li({
   marginRight: '16px',
+  '&:hover': {
+    color: '#333',
+    fontWeight: 700,
+  },
 });
