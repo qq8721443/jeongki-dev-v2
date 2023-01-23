@@ -16,7 +16,8 @@ const PostContainer = styled.div<PostProps>`
   position: relative;
   box-sizing: border-box;
   width: ${(props) => props.width};
-  padding: 8px;
+  padding: 18px;
+  border-top: 1px solid #e1e1e1;
   border-radius: 5px;
   background-color: transparent;
   cursor: pointer;
