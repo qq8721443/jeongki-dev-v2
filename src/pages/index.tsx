@@ -1,7 +1,12 @@
 import type { HeadFC } from 'gatsby';
+import { Layout } from '../components';
 
 const HomePage = () => {
-  return <h1>Home Page</h1>;
+  return (
+    <Layout>
+      <h1>Home Page</h1>
+    </Layout>
+  );
 };
 
 export default HomePage;
